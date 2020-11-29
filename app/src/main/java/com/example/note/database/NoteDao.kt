@@ -1,14 +1,12 @@
 package com.example.note.database
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 
 @Dao
 interface NoteDao {
+    @Transaction
     @Query("select * from notes")
-    suspend fun getAll(): List<Note>
+    suspend fun getAll(): List<NoteAndCategory>
 
     @Insert
     suspend fun insert(note: Note)

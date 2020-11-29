@@ -13,19 +13,26 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/input_name_note"
+            android:id="@+id/inputTitleNote"
+            android:hint="Title"
             tools:ignore="LabelFor"
-            style="@style/editText"
-            android:autofillHints="" />
+            style="@style/editText" />
 
         <EditText
-            android:id="@+id/input_text_note"
+            android:id="@+id/inputTextNote"
+            android:hint="Body"
             tools:ignore="LabelFor"
-            style="@style/editText"
-            android:autofillHints="" />
+            style="@style/editText"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/inputCategoryNote"
+            android:hint="Category"
+            tools:ignore="LabelFor"
+            style="@style/editText"/>
+
 
         <Button
-            android:id="@+id/btn_add_note"
+            android:id="@+id/btnAddNote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/btn_add_note"
