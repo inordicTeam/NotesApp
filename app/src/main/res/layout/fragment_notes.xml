@@ -23,7 +23,7 @@
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/ic_add"
-        android:backgroundTint="@color/colorPrimary"
+        app:tint="@android:color/white"
         android:layout_gravity="bottom|end"/>
 
 </FrameLayout>

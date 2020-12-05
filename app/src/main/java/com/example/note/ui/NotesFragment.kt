@@ -1,5 +1,9 @@
 package com.example.note.ui
 
+import android.animation.AnimatorInflater
+import android.animation.AnimatorSet
+import android.animation.ObjectAnimator
+import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -31,11 +35,32 @@ class NotesFragment : Fragment(), CoroutineScope {
         notesList.adapter = adapter
         btnAddNewNote.setOnClickListener {
             findNavController().navigate(R.id.action_notesFragment_to_addNoteFragment)
+//            ObjectAnimator.ofArgb(
+//                btnAddNewNote,
+//                "",
+//                resources.getColor(android.R.color.white),
+//                resources.getColor(R.color.colorAccent),
+//                resources.getColor(android.R.color.white)
+//            ).apply {
+//                addUpdateListener {
+//                    val animatedValue = it.animatedValue as Int
+//                    btnAddNewNote.imageTintList = ColorStateList.valueOf(animatedValue)
+//                }
+//                duration = 600
+//                repeatMode = ObjectAnimator.RESTART
+//                repeatCount = ObjectAnimator.INFINITE
+//                start()
+//            }
+//            (AnimatorInflater.loadAnimator(requireContext(), R.animator.simple_animation) as AnimatorSet).apply {
+//                setTarget(btnAddNewNote)
+//                start()
+//            }
         }
 
         launch {
             val notes = async(Dispatchers.IO) { App.db.noteDao().getAll() }
             adapter.updateNotes(notes.await().map { it.note })
         }
+
     }
 }
