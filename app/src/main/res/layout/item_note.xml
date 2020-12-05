@@ -15,9 +15,10 @@
         android:gravity="center_vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_weight="12"
             android:padding="@dimen/app_padding">
 
             <TextView
@@ -36,7 +37,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/app_margin"
-                android:lines="1"
                 android:textColor="@color/purple_700"
                 android:textSize="@dimen/app_medium_text"
                 android:fontFamily="sans-serif-medium"
@@ -49,7 +49,7 @@
                 android:layout_margin="@dimen/app_margin"
                 android:textColor="@color/colorPrimaryVariant"
                 android:textSize="@dimen/app_normal_text"
-                tools:text="Sample text" />
+                tools:text="Sample text Sample text Sample text Sample text Sample text Sample text Sample text" />
 
         </LinearLayout>
 

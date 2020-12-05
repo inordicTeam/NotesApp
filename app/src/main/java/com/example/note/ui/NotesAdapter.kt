@@ -31,6 +31,7 @@ class NotesAdapter(
             deleteNote(it) // удаление из БД
             notes.removeAt(position) // удаление из массива данных адаптера
             notifyItemRemoved(position) // сообщаем адаптеру, что элемент удален и нужно перерисоваться
+            notifyItemRangeChanged(position, itemCount) // обновляем идущие дальше элементы
         }
     }
 
